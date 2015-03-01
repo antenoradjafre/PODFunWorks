@@ -24,7 +24,7 @@ public class SortArrays {
 
     protected int [] buildRamdomArray(int [] myArray) {
         for(int i=0;i<myArray.length;i++){
-            int value = (int) (Math.random()*10000);
+            int value = (int) (Math.random()*100);
             myArray[i] = value;
         }
         return myArray;
