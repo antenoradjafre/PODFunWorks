@@ -1,16 +1,19 @@
 /**
  * Created by Antenor on 26/02/2015.
  */
-public class InsertionSort extends Sorts {
+public class MergeSort {
 
-    public InsertionSort(int[] myArray){
+    private int [] myArray;
+    private long diffTime = 0;
+
+    public MergeSort(int[] myArray){
         this.myArray = myArray;
 //        showArray(myArray);
-        doInsertionSort();
+        doMergeSort();
 //        showArray(myArray);
     }
 
-    public void doInsertionSort() {
+    public void doMergeSort() {
         diffTime = System.currentTimeMillis();
         for(int i=0;i<myArray.length;i++){
             int previousIndex = i - 1;
@@ -25,7 +28,7 @@ public class InsertionSort extends Sorts {
                 }
             }
         }
-        showDiffTime(diffTime, "InsertionSort");
+        showDiffTime(diffTime);
     }
 
     private boolean shouldTradeValues(int value, int previousValue) {
@@ -38,4 +41,20 @@ public class InsertionSort extends Sorts {
         myArray[i+1] = myArray[i];
         myArray[i] = aux;
     }
+
+    protected long showDiffTime(long initialTime) {
+        long finalTime = System.currentTimeMillis();
+        diffTime = (finalTime - initialTime);
+        System.out.println(String.format("Array contendo " + myArray.length + " elementos demorou %02d segundos  e %02d milisegundos", diffTime / 60, diffTime % 60));
+        return diffTime;
+    }
+
+
+    protected void showArray(int [] myArray) {
+        for(int value : myArray){
+            System.out.print(value + " ");
+        }
+        System.out.println();
+    }
+
 }

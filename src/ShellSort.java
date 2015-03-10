@@ -1,10 +1,7 @@
 /**
  * Created by Antenor on 26/02/2015.
  */
-public class ShellSort {
-
-    private int [] myArray;
-    private long diffTime = 0;
+public class ShellSort extends Sorts{
 
     public ShellSort(int[] myArray){
         this.myArray = myArray;
@@ -15,30 +12,31 @@ public class ShellSort {
 
     public void doShellSort() {
         diffTime = System.currentTimeMillis();
-        //TODO
-        showDiffTime(diffTime);
-    }
-
-    private void tradeValues(int i) {
-        int aux;
-        aux = myArray[i+1];
-        myArray[i+1] = myArray[i];
-        myArray[i] = aux;
-    }
-
-    protected long showDiffTime(long initialTime) {
-        long finalTime = System.currentTimeMillis();
-        diffTime = (finalTime - initialTime);
-        System.out.println(String.format("Array contendo " + myArray.length + " elementos demorou %02d segundos  e %02d milisegundos", diffTime / 60, diffTime % 60));
-        return diffTime;
-    }
-
-
-    protected void showArray(int [] myArray) {
-        for(int value : myArray){
-            System.out.print(value + " ");
+        int k = 1;
+        int length = myArray.length;
+        while(k < length){
+            k = k * 3 + 1;
         }
-        System.out.println();
+        k = k / 3;
+        int rightHandValue, rightHand, leftHand, leftHandValue;
+        while (k > 0) {
+            for (int i = k; i < length; i++) {
+                rightHandValue = myArray[i];
+                rightHand = i;
+                leftHand = rightHand - k;
+                leftHandValue = myArray[leftHand];
+                while (rightHand >= k && leftHandValue > rightHandValue) {
+                    myArray[rightHand] = leftHandValue;
+                    rightHand = rightHand - k;
+                    if(rightHand >= k){
+                        leftHand = rightHand - k;
+                        leftHandValue = myArray[leftHand];
+                    }
+                }
+                myArray[rightHand] = rightHandValue;
+            }
+            k = k / 2;
+        }
+        showDiffTime(diffTime, "ShellSort");
     }
-
 }

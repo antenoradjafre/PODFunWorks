@@ -1,10 +1,7 @@
 /**
  * Created by Antenor on 26/02/2015.
  */
-public class SelectionSort {
-
-    private int [] myArray;
-    private long diffTime = 0;
+public class SelectionSort extends Sorts{
 
     public SelectionSort(int[] myArray){
         this.myArray = myArray;
@@ -15,32 +12,27 @@ public class SelectionSort {
 
     public void doSelectionSort() {
         diffTime = System.currentTimeMillis();
-        for(int i=0;i<myArray.length-1;i++){
-
+        int i, j, minIndex;
+        int lenght = myArray.length;
+        for (i = 0; i < lenght - 1; i++) {
+            minIndex = i;
+            for (j = i + 1; j < lenght; j++){
+                if (myArray[j] < myArray[minIndex]){
+                    minIndex = j;
+                }
+            }
+            if (minIndex != i) {
+                tradeValues(i, minIndex);
+            }
         }
-        showDiffTime(diffTime);
+        showDiffTime(diffTime, "SelectionSort");
     }
 
-    private void tradeValues(int i) {
+    private void tradeValues(int i, int minIndex) {
         int aux;
-        aux = myArray[i+1];
-        myArray[i+1] = myArray[i];
-        myArray[i] = aux;
-    }
-
-    protected long showDiffTime(long initialTime) {
-        long finalTime = System.currentTimeMillis();
-        diffTime = (finalTime - initialTime);
-        System.out.println(String.format("Array contendo " + myArray.length + " elementos demorou %02d segundos  e %02d milisegundos", diffTime / 60, diffTime % 60));
-        return diffTime;
-    }
-
-
-    protected void showArray(int [] myArray) {
-        for(int value : myArray){
-            System.out.print(value + " ");
-        }
-        System.out.println();
+        aux = myArray[i];
+        myArray[i] = myArray[minIndex];
+        myArray[minIndex] = aux;
     }
 
 }
