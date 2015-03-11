@@ -14,10 +14,13 @@ public class ShellSort extends Sorts{
         diffTime = System.currentTimeMillis();
         int k = 1;
         int length = myArray.length;
+        //Calculando k, ou gap
         while(k < length){
             k = k * 3 + 1;
         }
+        //Divisão para pegar o valor menor ao tamanho da lista
         k = k / 3;
+
         int rightHandValue, rightHand, leftHand, leftHandValue;
         while (k > 0) {
             for (int i = k; i < length; i++) {

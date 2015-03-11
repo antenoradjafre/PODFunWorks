@@ -4,27 +4,29 @@
 public class Main {
     public static void main(String args[]){
         SortArrays arrays = new SortArrays();
-        //Show BubbleSort
+//        //Show BubbleSort
         int [] ten = setArrayValues(arrays.getListOfTen());
         int [] hundreds = setArrayValues(arrays.getListOfHundreds());
         int [] thousands = setArrayValues(arrays.getListOfThousands());
         int [] tenThousands = setArrayValues(arrays.getListOfTenThousands());
-        new BubbleSort(ten);
-        new BubbleSort(hundreds);
-        new BubbleSort(thousands);
-        new BubbleSort(tenThousands);
-        //Show InsertionSort
-        System.out.println(" ");
-        System.out.println("---------------------------------------------------------------------------------------------------------");
-        System.out.println(" ");
-        ten = setArrayValues(arrays.getListOfTen());
-        hundreds = setArrayValues(arrays.getListOfHundreds());
-        thousands = setArrayValues(arrays.getListOfThousands());
-        tenThousands = setArrayValues(arrays.getListOfTenThousands());
-        new InsertionSort(ten);
-        new InsertionSort(hundreds);
-        new InsertionSort(thousands);
-        new InsertionSort(tenThousands);
+        int [] hundredThousands = setArrayValues(arrays.getListOfHundredThousands());
+        int [] million = setArrayValues(arrays.getListOfMillion());
+//        new BubbleSort(ten);
+//        new BubbleSort(hundreds);
+//        new BubbleSort(thousands);
+//        new BubbleSort(tenThousands);
+//        //Show InsertionSort
+//        System.out.println(" ");
+//        System.out.println("---------------------------------------------------------------------------------------------------------");
+//        System.out.println(" ");
+//        ten = setArrayValues(arrays.getListOfTen());
+//        hundreds = setArrayValues(arrays.getListOfHundreds());
+//        thousands = setArrayValues(arrays.getListOfThousands());
+//        tenThousands = setArrayValues(arrays.getListOfTenThousands());
+//        new InsertionSort(ten);
+//        new InsertionSort(hundreds);
+//        new InsertionSort(thousands);
+//        new InsertionSort(tenThousands);
         //Show SelectionSort
         System.out.println(" ");
         System.out.println("---------------------------------------------------------------------------------------------------------");
@@ -33,10 +35,14 @@ public class Main {
         hundreds = setArrayValues(arrays.getListOfHundreds());
         thousands = setArrayValues(arrays.getListOfThousands());
         tenThousands = setArrayValues(arrays.getListOfTenThousands());
+        hundredThousands = setArrayValues(arrays.getListOfHundredThousands());
+        million = setArrayValues(arrays.getListOfMillion());
         new SelectionSort(ten);
         new SelectionSort(hundreds);
         new SelectionSort(thousands);
         new SelectionSort(tenThousands);
+        new SelectionSort(hundredThousands);
+        new SelectionSort(million);
         //Show ShellSort
         System.out.println(" ");
         System.out.println("---------------------------------------------------------------------------------------------------------");
@@ -45,10 +51,14 @@ public class Main {
         hundreds = setArrayValues(arrays.getListOfHundreds());
         thousands = setArrayValues(arrays.getListOfThousands());
         tenThousands = setArrayValues(arrays.getListOfTenThousands());
+        hundredThousands = setArrayValues(arrays.getListOfHundredThousands());
+        million = setArrayValues(arrays.getListOfMillion());
         new ShellSort(ten);
         new ShellSort(hundreds);
         new ShellSort(thousands);
         new ShellSort(tenThousands);
+        new ShellSort(hundredThousands);
+        new ShellSort(million);
     }
 
     public static int [] setArrayValues(int [] myArray){
