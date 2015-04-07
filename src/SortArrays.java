@@ -8,6 +8,11 @@ public class SortArrays {
     private int [] listOfTenThousands = new int [10000];
     private int [] listOfHundredThousands = new int [100000];
     private int [] listOfMillion = new int [1000000];
+    private int [] listOfFiveMillions = new int [5000000];
+    private int [] listOfNineMillions = new int [9000000];
+    private int [] listOfFourTeenMillions = new int [14000000];
+    private int [] listOfNineTeenMillions = new int [19000000];
+    private int [] listOfTwentyFourMillions = new int [24000000];
 
     public SortArrays(){
         this.setListOfTen(buildRamdomArray(getListOfTen()));
@@ -16,6 +21,11 @@ public class SortArrays {
         this.setListOfTenThousands(buildRamdomArray(getListOfTenThousands()));
         this.setListOfHundredThousands(buildRamdomArray(getListOfHundredThousands()));
         this.setListOfMillion(buildRamdomArray(getListOfMillion()));
+        this.setListOfFiveMillions(buildRamdomArray(getListOfFiveMillions()));
+        this.setListOfNineMillions(buildRamdomArray(getListOfNineMillions()));
+        this.setListOfFourTeenMillions(buildRamdomArray(getListOfFourTeenMillions()));
+        this.setListOfNineTeenMillions(buildRamdomArray(getListOfNineTeenMillions()));
+        this.setListOfTwentyFourMillions(buildRamdomArray(getListOfTwentyFourMillions()));
     }
 
     protected int [] buildArray(int [] myArray) {
@@ -81,5 +91,45 @@ public class SortArrays {
 
     public void setListOfMillion(int[] listOfMillion) {
         this.listOfMillion = listOfMillion;
+    }
+
+    public int[] getListOfFiveMillions() {
+        return listOfFiveMillions;
+    }
+
+    public void setListOfFiveMillions(int[] listOfFiveMillions) {
+        this.listOfFiveMillions = listOfFiveMillions;
+    }
+
+    public int[] getListOfNineMillions() {
+        return listOfNineMillions;
+    }
+
+    public void setListOfNineMillions(int[] listOfNineMillions) {
+        this.listOfNineMillions = listOfNineMillions;
+    }
+
+    public int[] getListOfFourTeenMillions() {
+        return listOfFourTeenMillions;
+    }
+
+    public void setListOfFourTeenMillions(int[] listOfFourTeenMillions) {
+        this.listOfFourTeenMillions = listOfFourTeenMillions;
+    }
+
+    public int[] getListOfNineTeenMillions() {
+        return listOfNineTeenMillions;
+    }
+
+    public void setListOfNineTeenMillions(int[] listOfNineTeenMillions) {
+        this.listOfNineTeenMillions = listOfNineTeenMillions;
+    }
+
+    public int[] getListOfTwentyFourMillions() {
+        return listOfTwentyFourMillions;
+    }
+
+    public void setListOfTwentyFourMillions(int[] listOfTwentyFourMillions) {
+        this.listOfTwentyFourMillions = listOfTwentyFourMillions;
     }
 }

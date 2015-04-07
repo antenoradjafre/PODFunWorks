@@ -2,30 +2,39 @@
  * Created by Antenor on 26/02/2015.
  */
 public class Main {
+
     static int [] ten;
     static int [] hundreds;
     static int [] thousands;
     static int [] tenThousands;
     static int [] hundredThousands;
     static int [] million;
+    static int [] fiveMillions;
+    static int [] nineMillions;
+    static int [] fourTeenMillions;
+    static int [] nineTeenMillions;
+    static int [] twentyFourMillions;
+
     public static void main(String args[]){
         SortArrays arrays = new SortArrays();
         //Show BubbleSort
-        executeBubbleSort(arrays);
+//        executeBubbleSort(arrays);
         //Show CountingSort
-        executeCountingSort(arrays);
+//        executeCountingSort(arrays);
         //Show Flagged BubbleSort
-        executeFlaggedBubbleSort(arrays);
+//        executeFlaggedBubbleSort(arrays);
+        //Show HeapSort
+        executeHeapSort(arrays);
         //Show InsertionSort
-        executeInsertionSort(arrays);
+//        executeInsertionSort(arrays);
         //Show MergeSort
         executeMergeSort(arrays);
         //Show QuickSort
-        executeQuickSort(arrays);
+//        executeQuickSort(arrays);
         //Show SelectionSort
-        executeSelectionSort(arrays);
+//        executeSelectionSort(arrays);
         //Show ShellSort
-        executeShellSort(arrays);
+//        executeShellSort(arrays);
     }
 
     public static void arraysDeclarations(SortArrays arrays) {
@@ -35,6 +44,11 @@ public class Main {
         tenThousands = setArrayValues(arrays.getListOfTenThousands());
         hundredThousands = setArrayValues(arrays.getListOfHundredThousands());
         million = setArrayValues(arrays.getListOfMillion());
+        fiveMillions = setArrayValues(arrays.getListOfFiveMillions());
+        nineMillions = setArrayValues(arrays.getListOfNineMillions());
+        fourTeenMillions = setArrayValues(arrays.getListOfFourTeenMillions());
+        nineTeenMillions = setArrayValues(arrays.getListOfNineTeenMillions());
+        twentyFourMillions = setArrayValues(arrays.getListOfTwentyFourMillions());
     }
 
     public static void executeBubbleSort(SortArrays arrays) {
@@ -73,6 +87,24 @@ public class Main {
 //        new CountingSort(million);
     }
 
+    public static void executeHeapSort(SortArrays arrays) {
+        arraysDeclarations(arrays);
+        System.out.println(" ");
+        System.out.println("---------------------------------------------------------------------------------------------------------");
+        System.out.println(" ");
+//        new HeapSort(ten);
+        new HeapSort(hundreds);
+        new HeapSort(thousands);
+        new HeapSort(tenThousands);
+        new HeapSort(hundredThousands);
+        new HeapSort(million);
+        new HeapSort(fiveMillions);
+        new HeapSort(nineMillions);
+        new HeapSort(fourTeenMillions);
+        new HeapSort(nineTeenMillions);
+        new HeapSort(twentyFourMillions);
+    }
+
     public static void executeInsertionSort(SortArrays arrays) {
         arraysDeclarations(arrays);
         System.out.println(" ");
@@ -82,8 +114,8 @@ public class Main {
         new InsertionSort(hundreds);
         new InsertionSort(thousands);
         new InsertionSort(tenThousands);
-//        new InsertionSort(hundredThousands);
-//        new InsertionSort(million);
+        new InsertionSort(hundredThousands);
+        new InsertionSort(million);
     }
 
     private static void executeMergeSort(SortArrays arrays) {
@@ -91,12 +123,17 @@ public class Main {
         System.out.println(" ");
         System.out.println("---------------------------------------------------------------------------------------------------------");
         System.out.println(" ");
-        new MergeSort(ten);
+//        new MergeSort(ten);
         new MergeSort(hundreds);
         new MergeSort(thousands);
         new MergeSort(tenThousands);
-//        new MergeSort(hundredThousands);
-//        new MergeSort(million);
+        new MergeSort(hundredThousands);
+        new MergeSort(million);
+        new MergeSort(fiveMillions);
+        new MergeSort(nineMillions);
+        new MergeSort(fourTeenMillions);
+        new MergeSort(nineTeenMillions);
+        new MergeSort(twentyFourMillions);
     }
 
     private static void executeQuickSort(SortArrays arrays) {
